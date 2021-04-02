@@ -1,6 +1,6 @@
 class AnimalsController < ApplicationController
 
   def index
-    @animals = Animal.all
+    json_response(Animal.all)
   end
 end
