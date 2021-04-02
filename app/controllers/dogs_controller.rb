@@ -24,11 +24,9 @@ class DogsController < ApplicationController
     Dog.find(params[:id]).destroy!
   end
 
-
   private
 
   def dog_params
     params.permit(:name, :breed)
   end
-
 end

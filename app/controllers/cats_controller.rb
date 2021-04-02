@@ -24,12 +24,9 @@ class CatsController < ApplicationController
     Cat.find(params[:id]).destroy!
   end
 
-
   private
 
   def cat_params
     params.permit(:name, :breed)
   end
-
-end
 end

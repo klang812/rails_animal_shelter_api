@@ -3,9 +3,9 @@ class AddCatsTable < ActiveRecord::Migration[5.2]
     create_table :cats do |t|
       t.string :name
       t.string :breed
-      t.references :animals, null: false, foreign_key: true
+      t.references :animal, null: false, foreign_key: true
 
-      t.timestamp
+      t.timestamps
     end
     
   end
