@@ -6,27 +6,27 @@ class Seed
     seed = Seed.new
     seed.generate_dog
     seed.generate_cat
+    puts "Congrats #{Dog.count} dogs has been made"
+    puts "Congrats #{Cat.count} cats has been made"
   end
   def generate_dog
+    animal = Animal.create!(animal_type: "dog")
     50.times do
-      Dog.create!(
+      animal.dogs.create!(
         name: Faker::Creature::Dog.name,
-        breed: Faker::Creature::Dog.breed,
-        animal_id: animal.id
+        breed: Faker::Creature::Dog.breed 
       )
     end
   end
   def generate_cat
+    animal = Animal.create!(animal_type: "cat")
     50.times do
-      Cat.create!(
+      animal.cats.create!(
         name: Faker::Creature::Cat.name,
-        breed: Faker::Creature::Cat.breed,
-        animal_id: animal.id
+        breed: Faker::Creature::Cat.breed  
     )
     end
   end
-  puts "Congrats #{Dog.count} dogs has been made"
-  puts "Congrats #{Cat.count} cats has been made"
 end
 
 

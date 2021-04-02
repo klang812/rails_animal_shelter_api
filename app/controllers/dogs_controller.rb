@@ -5,7 +5,7 @@ class DogsController < ApplicationController
   end
 
   def create 
-    dog = animal.dogs.create!(dog_params)
+    dog = animal.dog.create!(dog_params)
     json_response(dog, :created)
   end
 
@@ -25,6 +25,9 @@ class DogsController < ApplicationController
   end
 
   private
+
+  def animal 
+    animal ||= Animal.find(params[:animal_id])
 
   def dog_params
     params.permit(:name, :breed)

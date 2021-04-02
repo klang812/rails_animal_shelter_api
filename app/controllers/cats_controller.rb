@@ -1,7 +1,7 @@
 class CatsController < ApplicationController
   
   def index
-    json_response(animal.cats)
+    json_response(Cat.all)
   end
 
   def create 
@@ -25,6 +25,9 @@ class CatsController < ApplicationController
   end
 
   private
+
+  def animal 
+    animal ||= Animal.find(params[:animal_id])
 
   def cat_params
     params.permit(:name, :breed)
