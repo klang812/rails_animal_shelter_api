@@ -1,8 +1,8 @@
 class Dog < ApplicationRecord
   belongs_to :animal
 
-  validates :name, :breed {
+  validates :name, :breed, {
     presence: true
   }
-  
+
 end

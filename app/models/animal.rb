@@ -1,2 +1,4 @@
 class Animal < ApplicationRecord
+  has_many :dogs, dependent: :destroy
+  has_many :cats, dependent: :destroy
 end
